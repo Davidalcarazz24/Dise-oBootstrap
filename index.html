@@ -1,0 +1,630 @@
+<!DOCTYPE html> <!-- Declara el documento como HTML5 -->
+<html lang="es"> <!-- Indica que el contenido está en español -->
+  <head> <!-- Cabecera del documento, metadatos y enlaces -->
+    <meta charset="utf-8" /> <!-- Define la codificación UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Hace la página responsive -->
+    <title>NetNova Academy</title> <!-- Título que se muestra en la pestaña -->
+
+    <!-- Aquí enlazo Bootstrap desde un CDN para usar sus estilos y componentes -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    /> <!-- [BOOTSTRAP GRID] Carga la hoja de estilos de Bootstrap -->
+
+    <!-- Aquí conecto mi hoja de estilos propia -->
+    <link rel="stylesheet" href="styles.css" /> <!-- Carga estilos personalizados (hero, damero, etc.) -->
+  </head>
+
+  <!-- Le pongo un fondo claro a toda la página -->
+  <body class="bg-light"> <!-- Aplica fondo claro a todo el body -->
+
+    <!-- Navbar -->
+    <!-- En esta barra de navegación pongo los enlaces principales del sitio -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top"
+    > <!-- [CABECERA + NAVBAR] Barra de navegación Bootstrap fija arriba -->
+      <div class="container"> <!-- Contenedor centrado de Bootstrap -->
+
+        <!-- Logo que solo se ve en móvil -->
+        <a
+          class="navbar-brand d-inline-flex align-items-center gap-2 d-lg-none"
+          href="#inicio"
+        > <!-- Marca de la web visible solo en móviles -->
+          <img
+            src="https://images.pexels.com/photos/2706379/pexels-photo-2706379.jpeg"
+            width="32"
+            height="32"
+            class="rounded-circle scrollFade"
+            loading="lazy"
+            alt="Logo móvil NetNova"
+          /> <!-- Logo móvil redondo con efecto scrollFade y lazy loading -->
+          <span>NetNova</span> <!-- Nombre corto de la marca en móvil -->
+        </a>
+
+        <!-- Botón hamburguesa para abrir/cerrar el menú en pantallas pequeñas -->
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+        > <!-- Botón que controla el colapso del menú -->
+          <span class="navbar-toggler-icon"></span> <!-- Icono de hamburguesa -->
+        </button>
+
+        <!-- Aquí meto el contenido del menú (enlaces, logo de escritorio y buscador) -->
+        <div class="collapse navbar-collapse" id="mainNavbar"> <!-- Contenedor colapsable del menú -->
+          <div class="row w-100 align-items-center g-3"> <!-- Fila con 3 columnas: menú, logo, buscador -->
+
+            <!-- Enlaces de navegación de la izquierda -->
+            <div class="col-12 col-lg-4"> <!-- Columna izquierda: enlaces de navegación -->
+              <ul class="navbar-nav me-lg-auto mb-2 mb-lg-0"> <!-- Lista de enlaces del navbar -->
+                <li class="nav-item"> <!-- Elemento de menú -->
+                  <a class="nav-link active" aria-current="page" href="#inicio"
+                    >Inicio</a
+                  > <!-- Enlace a la sección de inicio -->
+                </li>
+                <li class="nav-item"> <!-- Elemento de menú -->
+                  <a class="nav-link" href="#cursos">Cursos</a> <!-- Enlace a sección cursos -->
+                </li>
+
+                <!-- Aquí pongo un desplegable para las rutas -->
+                <li class="nav-item dropdown"> <!-- Elemento con menú desplegable -->
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    href="#rutas"
+                  > <!-- Botón que abre el dropdown -->
+                    Rutas
+                  </a>
+                  <ul class="dropdown-menu"> <!-- Menú desplegable -->
+                    <li><a class="dropdown-item" href="#cursos">Redes</a></li> <!-- Opción Redes -->
+                    <li>
+                      <a class="dropdown-item" href="#ciberseguridad"
+                        >Ciberseguridad</a
+                      > <!-- Opción Ciberseguridad -->
+                    </li>
+                    <li><hr class="dropdown-divider" /></li> <!-- Separador del menú -->
+                    <li><a class="dropdown-item" href="#cloud">Cloud</a></li> <!-- Opción Cloud -->
+                  </ul>
+                </li>
+
+                <!-- Este enlace lo dejo desactivado para simular que el blog aún no está -->
+                <li class="nav-item"><a class="nav-link disabled">Blog</a></li> <!-- Enlace deshabilitado -->
+              </ul>
+            </div>
+
+            <!-- Logo centrado solo para escritorio -->
+            <div class="col-12 col-lg-4 text-lg-center d-none d-lg-block"> <!-- Columna central visible solo en escritorio -->
+              <a
+                class="navbar-brand d-inline-flex align-items-center gap-2"
+                href="#inicio"
+              > <!-- Marca centrada para escritorio -->
+                <img
+                  src="https://images.pexels.com/photos/2706379/pexels-photo-2706379.jpeg"
+                  width="36"
+                  height="36"
+                  class="rounded-circle scrollFade"
+                  loading="lazy"
+                  alt="Logo NetNova Academy"
+                /> <!-- Logo de escritorio con lazy loading -->
+                <span>NetNova Academy</span> <!-- Nombre completo de la academia -->
+              </a>
+            </div>
+
+            <!-- Buscador y botón de acceso en la derecha -->
+            <div class="col-12 col-lg-4 d-flex justify-content-lg-end"> <!-- Columna derecha: buscador y botón -->
+              <!-- Este formulario de momento es solo visual, no envía nada real -->
+              <form class="d-flex w-100 w-lg-auto"> <!-- Formulario de búsqueda -->
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Buscar cursos"
+                  aria-label="Buscar"
+                /> <!-- Campo de búsqueda -->
+                <button class="btn btn-outline-success me-2" type="submit">
+                  Buscar
+                </button> <!-- Botón para enviar búsqueda -->
+                <button class="btn btn-primary" type="button">Acceder</button> <!-- Botón de acceso/login -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav> <!-- [CABECERA RESUELTA] Navbar con 3 zonas: menú, logo, herramientas -->
+
+    <!-- Jumbotron -->
+    <!-- Aquí pongo una tarjeta grande con imagen de fondo y texto encima para presentar la academia -->
+    <section class="jumbotron-section py-4" id="inicio"> <!-- Sección jumbotron de bienvenida -->
+      <div class="container"> <!-- Contenedor centrado Bootstrap -->
+        <div class="card bg-dark text-white border-0 jumbotron-card hover-glow">
+          <!-- Card grande usada como jumbotron -->
+          <!-- Imagen principal del jumbotron -->
+          <img
+            src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg"
+            class="card-img jumbotron-img scrollFade hover-glow"
+            loading="lazy"
+            alt="Estudiantes en formación tecnológica"
+          /> <!-- Imagen de fondo del jumbotron con lazy loading -->
+
+          <!-- Texto y botones que van por encima de la imagen -->
+          <div
+            class="card-img-overlay d-flex flex-column justify-content-center"
+          > <!-- Capa superpuesta con el contenido del jumbotron -->
+            <h2 class="mb-3">Formación en tecnología a tu ritmo</h2> <!-- Título del jumbotron -->
+            <p class="mb-0">
+              Elige tu ruta de aprendizaje y comienza hoy mismo con contenidos
+              guiados.
+            </p> <!-- Texto descriptivo -->
+            <p class="mb-0">
+              Accede a cursos creados por expertos y mantén tus habilidades
+              siempre actualizadas.
+            </p> <!-- Segundo párrafo descriptivo -->
+
+            <!-- Botones para ir rápido a las secciones de la página -->
+            <div class="d-flex flex-wrap gap-2 mt-3"> <!-- Contenedor de botones -->
+              <a class="btn btn-primary btn-sm" href="#cursos">Redes</a> <!-- Botón hacia cursos de redes -->
+              <a class="btn btn-outline-light btn-sm" href="#ciberseguridad"
+                >Ciberseguridad</a
+              > <!-- Botón hacia sección ciberseguridad -->
+              <a class="btn btn-outline-info btn-sm" href="#cloud"
+                >Todas las rutas</a
+              > <!-- Botón hacia sección Cloud -->
+            </div>
+
+            <!-- Pequeño texto para simular que el contenido se actualiza -->
+            <p class="mt-3">
+              <small>Última actualización: hace 3 minutos</small>
+            </p> <!-- Texto de actualización de contenido -->
+          </div>
+        </div>
+      </div>
+    </section> <!-- [JUMBOTRON RESUELTO] Card tipo image-overlay a ancho de columna -->
+
+    <!-- Hero -->
+    <!-- Esta sección la uso como parte principal para animar a empezar los cursos -->
+    <section class="hero-section"> <!-- Sección hero a ancho completo con fondo en CSS -->
+      <!-- Esta capa la uso para oscurecer o dar efecto al fondo (se define en CSS) -->
+      <div class="hero-overlay"></div> <!-- Capa oscura superpuesta al fondo -->
+
+      <div class="container hero-content"> <!-- Contenedor del contenido del hero -->
+        <div class="row align-items-center"> <!-- Fila con texto e imagen/curso -->
+          <!-- Columna con el texto principal del hero -->
+          <div class="col-lg-6 mb-5 mb-lg-0"> <!-- Columna izquierda con mensaje principal -->
+            <p class="hero-tagline mb-2">Academia de redes NetNova</p> <!-- Frase corta introductoria -->
+            <h1 class="hero-title mb-3">
+              ¡Desarrolla tus habilidades hoy mismo!<br />
+              <span class="text-info">¡Es gratis!</span>
+            </h1> <!-- Título principal del hero -->
+
+            <p class="lead mb-4">
+              Aprende redes, automatización y seguridad con cursos guiados.
+            </p> <!-- Descripción ampliada -->
+
+            <!-- Botón que lleva a la parte de cursos -->
+            <a class="btn btn-primary btn-lg" href="#cursos">Empezar</a> <!-- Llamada a la acción principal -->
+          </div>
+
+          <!-- Columna con la tarjeta de ejemplo de ruta o curso -->
+          <div class="col-lg-5 offset-lg-1"> <!-- Columna derecha con card de curso -->
+            <div class="course-card shadow-lg hover-glow"> <!-- Card de curso resaltada -->
+              <img
+                src="https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg"
+                class="scrollFade"
+                loading="lazy"
+                alt="Profesional trabajando con ordenadores"
+              /> <!-- Imagen de la tarjeta, con lazy loading -->
+
+              <h5>Empieza tu carrera tecnológica</h5> <!-- Título de la card -->
+              <p class="mb-0">
+                Descubre la ruta ideal para entrar en el mundo de las redes y la
+                ciberseguridad.
+              </p> <!-- Descripción de la ruta -->
+              <p class="small mb-3 text-info text-uppercase">
+                Laboratorios prácticos y proyectos reales incluidos.
+              </p> <!-- Texto destacado en pequeño -->
+
+              <!-- Lista con algunos puntos clave del curso -->
+              <ul class="small mb-3"> <!-- Lista de características del curso -->
+                <li>60 horas de contenido estructurado.</li>
+                <li>Laboratorios interactivos guiados paso a paso.</li>
+                <li>Mentoría profesional con expertos del sector.</li>
+              </ul>
+
+              <a class="btn btn-outline-light btn-sm" href="#cursos"
+                >Ver plan</a
+              > <!-- Botón para ver el plan de estudios -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> <!-- [HERO / JUMBOTRON EXTRA] Sección destacada que acompaña al jumbotron -->
+
+    <!-- Sección damero -->
+    <!-- Aquí coloco varias tarjetas en forma de rejilla para enseñar diferentes aspectos de la formación -->
+    <section class="damero-section py-5" id="cursos"> <!-- [DAMERO] Sección con filas de dos columnas -->
+      <div class="container"> <!-- Contenedor general del damero -->
+
+        <!-- Fila 1 del damero -->
+        <div class="row align-items-center mb-5"> <!-- Primera fila de dos columnas -->
+          <div class="col-12 col-md-6 mb-4 mb-md-0"> <!-- Columna izquierda, ocupa 12 en móvil y 6 en md -->
+            <div class="card h-100 shadow-sm hover-glow"> <!-- Card con sombra y efecto hover -->
+              <img
+                src="https://images.pexels.com/photos/3184312/pexels-photo-3184312.jpeg"
+                class="card-img-top scrollFade hover-glow"
+                loading="lazy"
+                alt="Personas trabajando en equipo"
+              /> <!-- Imagen de la card con lazy loading -->
+              <div class="card-body"> <!-- Cuerpo de la tarjeta -->
+                <h5>Proyectos reales</h5> <!-- Título de la card -->
+                <p class="mb-0">
+                  Aprende con casos reales que simulan entornos profesionales.
+                </p> <!-- Primer párrafo descriptivo -->
+                <p class="mb-0">
+                  Colabora con otros alumnos y resuelve desafíos de redes
+                  completos.
+                </p> <!-- Segundo párrafo descriptivo -->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6"> <!-- Columna derecha de la primera fila -->
+            <div class="card h-100 shadow-sm hover-glow"> <!-- Card equivalente a la de la izquierda -->
+              <img
+                src="https://images.pexels.com/photos/1181341/pexels-photo-1181341.jpeg"
+                class="card-img-top scrollFade hover-glow"
+                loading="lazy"
+                alt="Diseño de red en un portátil"
+              /> <!-- Imagen con lazy loading -->
+              <div class="card-body"> <!-- Texto descriptivo de la card -->
+                <h5>Diseños de redes escalables</h5>
+                <p class="mb-0">
+                  Visualiza topologías de red modernas con routers, switches y
+                  firewalls.
+                </p>
+                <p class="mb-0">
+                  Comprende el flujo de tráfico entre usuarios, servidores y la
+                  nube.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fila 2 del damero (invertida en pantallas medianas) -->
+        <div class="row align-items-center mb-5 flex-md-row-reverse"> <!-- Segunda fila con orden invertido en md -->
+          <div class="col-12 col-md-6 mb-4 mb-md-0"> <!-- Columna izquierda en móvil, derecha en escritorio -->
+            <div class="card shadow-sm hover-glow"> <!-- Tarjeta con sombra -->
+              <img
+                src="https://images.pexels.com/photos/5999825/pexels-photo-5999825.jpeg"
+                class="card-img-top scrollFade hover-glow"
+                loading="lazy"
+                alt="Rack con equipamiento de red"
+              /> <!-- Imagen del rack con lazy loading -->
+              <div class="card-body"> <!-- Contenido de la card -->
+                <h5>Infraestructura profesional</h5>
+                <p class="mb-0">
+                  Diseña y optimiza redes reales con equipamiento moderno.
+                </p>
+                <p class="mb-0">
+                  Aprende mantenimiento, documentación y monitorización.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6"> <!-- Segunda columna de la fila 2 -->
+            <div class="card h-100 shadow-sm hover-glow"> <!-- Card con altura completa -->
+              <img
+                src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg"
+                class="card-img-top scrollFade hover-glow"
+                loading="lazy"
+                alt="Centro de datos con servidores"
+              /> <!-- Imagen del CPD con lazy loading -->
+              <div class="card-body">
+                <h5>Centros de datos de alto rendimiento</h5> <!-- Título de la card -->
+                <p class="mb-0">
+                  Conoce la estructura de servidores, redes troncales y
+                  almacenamiento.
+                </p>
+                <p class="mb-0">
+                  Conceptos de redundancia, HA y seguridad física.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fila 3 del damero -->
+        <div class="row align-items-center mb-5"> <!-- Tercera fila de dos columnas -->
+          <div class="col-12 col-md-6 mb-4 mb-md-0"> <!-- Primera columna de la fila 3 -->
+            <div class="card shadow-sm hover-glow"> <!-- Card para automatización -->
+              <img
+                src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg"
+                class="card-img-top scrollFade hover-glow"
+                loading="lazy"
+                alt="Pantalla con código de automatización"
+              /> <!-- Imagen con código, lazy loading -->
+              <div class="card-body">
+                <h5>Automatización</h5> <!-- Título de la card -->
+                <p class="mb-0">
+                  Crea scripts en Python y utiliza herramientas como Ansible.
+                </p>
+                <p class="mb-0">Automatiza despliegues y tareas repetitivas.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6"> <!-- Segunda columna de la fila 3 -->
+            <div class="card h-100 shadow-sm hover-glow"> <!-- Card de monitorización -->
+              <img
+                src="https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg"
+                class="card-img-top scrollFade hover-glow"
+                loading="lazy"
+                alt="Panel de monitorización de sistemas"
+              /> <!-- Imagen de monitorización con lazy loading -->
+              <div class="card-body">
+                <h5>Monitorización</h5> <!-- Título -->
+                <p class="mb-0">
+                  Paneles visuales, alertas y análisis de rendimiento.
+                </p>
+                <p class="mb-0">
+                  Detecta fallos rápidamente y automatiza respuestas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> <!-- [DAMERO RESUELTO] Tres filas de dos columnas, responsive -->
+      </div>
+    </section>
+
+    <!-- Sección Cloud -->
+    <!-- En esta parte destaco la parte de Cloud usando un bloque a todo lo ancho -->
+    <section class="fullwidth-section py-5 text-center text-white" id="cloud"> <!-- Sección Cloud a ancho completo -->
+      <div class="container-fluid p-5 fullwidth-bg hover-glow"> <!-- Contenedor fluido con fondo degradado -->
+        <h2 class="mb-3">Construye tu futuro en la nube</h2> <!-- Título de la sección Cloud -->
+        <p class="lead">
+          Cursos, certificaciones y práctica real en entornos Cloud.
+        </p> <!-- Descripción -->
+        <!-- Botón que lleva a la sección de ciberseguridad, para seguir explorando -->
+        <a class="btn btn-light btn-lg" href="#ciberseguridad">Ver más áreas</a> <!-- Botón de navegación -->
+      </div>
+    </section> <!-- [FULLWIDTH RESUELTO] Fila de ancho completo con container-fluid -->
+
+    <!-- Sección collapse gallery -->
+    <!-- Aquí pongo una galería de tarjetas que se abren y cierran con el componente collapse de Bootstrap -->
+    <section class="collapse-gallery-section py-5" id="ciberseguridad"> <!-- [COLLAPSE GALLERY] Sección interactiva -->
+      <div class="container"> <!-- Contenedor principal -->
+        <div class="row text-center mb-4">
+          <h2>Explora por área</h2> <!-- Título de la galería -->
+        </div>
+
+        <div class="row g-4"> <!-- Fila con 4 columnas en pantallas medianas -->
+          <!-- Tarjeta 1: Redes empresariales -->
+          <div class="col-12 col-md-3"> <!-- Columna 1: 100% en móvil, 1/4 en md -->
+            <div class="card h-100 shadow-sm hover-glow"> <!-- Card con efecto hover -->
+              <!-- Esta imagen actúa como botón para abrir el contenido oculto -->
+              <img
+                src="https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg"
+                class="card-img-top collapse-trigger scrollFade hover-glow"
+                loading="lazy"
+                data-bs-toggle="collapse"
+                data-bs-target="#col1"
+                alt="Redes empresariales"
+              /> <!-- Imagen que dispara el collapse, con lazy loading -->
+              <div class="card-body">
+                <h6>Redes empresariales</h6> <!-- Título de la card -->
+                <p class="small mb-0">
+                  Diseño de redes LAN, WAN y segmentación.
+                </p>
+                <p class="small mb-0">Routing, switching y seguridad básica.</p>
+              </div>
+            </div>
+            <div class="collapse" id="col1"> <!-- Contenido colapsable 1 -->
+              <!-- Aquí iría más información sobre esta área -->
+              <div class="card card-body">Contenido redes</div> <!-- Texto dentro del collapse -->
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Ciberseguridad ofensiva -->
+          <div class="col-12 col-md-3"> <!-- Segunda columna de la galería -->
+            <div class="card h-100 shadow-sm hover-glow"> <!-- Card con sombra -->
+              <img
+                src="https://images.pexels.com/photos/3182763/pexels-photo-3182763.jpeg"
+                class="card-img-top collapse-trigger scrollFade hover-glow"
+                loading="lazy"
+                data-bs-toggle="collapse"
+                data-bs-target="#col2"
+                alt="Ciberseguridad ofensiva"
+              /> <!-- Imagen que abre el collapse 2 -->
+              <div class="card-body">
+                <h6>Ciberseguridad ofensiva</h6> <!-- Título -->
+                <p class="small mb-0">Ataques simulados y detección.</p>
+                <p class="small mb-0">Buenas prácticas y defensa activa.</p>
+              </div>
+            </div>
+            <div class="collapse" id="col2"> <!-- Contenido colapsable 2 -->
+              <div class="card card-body">Contenido ciberseguridad</div> <!-- Texto del collapse -->
+            </div>
+          </div>
+
+          <!-- Tarjeta 3: Servicios Cloud -->
+          <div class="col-12 col-md-3"> <!-- Tercera columna -->
+            <div class="card h-100 shadow-sm hover-glow"> <!-- Card -->
+              <img
+                src="https://images.pexels.com/photos/3861973/pexels-photo-3861973.jpeg"
+                class="card-img-top collapse-trigger scrollFade hover-glow"
+                loading="lazy"
+                data-bs-toggle="collapse"
+                data-bs-target="#col3"
+                alt="Servicios cloud"
+              /> <!-- Imagen que controla el collapse 3 -->
+              <div class="card-body">
+                <h6>Servicios Cloud</h6>
+                <p class="small mb-0">Modelos IaaS, PaaS y SaaS.</p>
+                <p class="small mb-0">Soluciones escalables.</p>
+              </div>
+            </div>
+            <div class="collapse" id="col3"> <!-- Contenido colapsable 3 -->
+              <div class="card card-body">Contenido cloud</div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 4: Automatización -->
+          <div class="col-12 col-md-3"> <!-- Cuarta columna -->
+            <div class="card h-100 shadow-sm hover-glow"> <!-- Card -->
+              <img
+                src="https://images.pexels.com/photos/3862373/pexels-photo-3862373.jpeg"
+                class="card-img-top collapse-trigger scrollFade hover-glow"
+                loading="lazy"
+                data-bs-toggle="collapse"
+                data-bs-target="#col4"
+                alt="Automatización de procesos"
+              /> <!-- Imagen que activa el collapse 4 -->
+              <div class="card-body">
+                <h6>Automatización</h6>
+                <p class="small mb-0">Scripting, pipelines y CI/CD.</p>
+                <p class="small mb-0">Infraestructura repetible.</p>
+              </div>
+            </div>
+            <div class="collapse" id="col4"> <!-- Contenido colapsable 4 -->
+              <div class="card card-body">Contenido automatización</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> <!-- [COLLAPSE GALLERY RESUELTA] 4 columnas con collapse y responsive -->
+
+    <!-- Sección de iconos de redes sociales -->
+    <!-- Aquí coloco los iconos en fila para pantallas medianas y grandes, y un accordion para móvil -->
+    <section class="social-section py-5"> <!-- [SOCIAL] Sección de redes sociales -->
+      <div class="container"> <!-- Contenedor principal -->
+
+        <!-- Versión escritorio: fila de iconos -->
+        <div class="row text-center d-none d-md-flex"> <!-- Fila visible solo en md y superior -->
+          <div class="col-md-2">
+            <img
+              class="social-icon hover-glow"
+              loading="lazy"
+              src="https://cdn-icons-png.flaticon.com/512/124/124010.png"
+              alt="Facebook"
+            /> <!-- Icono Facebook grande con lazy loading -->
+          </div>
+          <div class="col-md-2">
+            <img
+              class="social-icon hover-glow"
+              loading="lazy"
+              src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png"
+              alt="YouTube"
+            /> <!-- Icono YouTube -->
+          </div>
+          <div class="col-md-2">
+            <img
+              class="social-icon hover-glow"
+              loading="lazy"
+              src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+              alt="Twitter"
+            /> <!-- Icono Twitter -->
+          </div>
+          <div class="col-md-2">
+            <img
+              class="social-icon hover-glow"
+              loading="lazy"
+              src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
+              alt="LinkedIn"
+            /> <!-- Icono LinkedIn -->
+          </div>
+          <div class="col-md-2">
+            <img
+              class="social-icon hover-glow"
+              loading="lazy"
+              src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+              alt="Instagram"
+            /> <!-- Icono Instagram -->
+          </div>
+          <div class="col-md-2">
+            <img
+              class="social-icon hover-glow"
+              loading="lazy"
+              src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+              alt="Otra red social"
+            /> <!-- Otro icono de red social -->
+          </div>
+        </div>
+
+        <!-- Versión móvil: accordion con los iconos dentro -->
+        <div class="d-md-none"> <!-- Contenedor visible solo en móviles -->
+          <!-- Aquí uso un accordion para que en móvil se vea más ordenado -->
+          <div class="accordion" id="socialAccordion"> <!-- Accordion para agrupar iconos -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSocial">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSocial"
+                  aria-expanded="false"
+                  aria-controls="collapseSocial"
+                > <!-- Botón que abre/cierra el accordion -->
+                  Redes sociales
+                </button>
+              </h2>
+              <div
+                id="collapseSocial"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingSocial"
+                data-bs-parent="#socialAccordion"
+              > <!-- Contenedor colapsable de los iconos -->
+                <div class="accordion-body text-center">
+                  <!-- Aquí repito los iconos pero en versión pequeña para móvil -->
+                  <img
+                    class="social-icon-small hover-glow"
+                    loading="lazy"
+                    src="https://cdn-icons-png.flaticon.com/512/124/124010.png"
+                    alt="Facebook"
+                  /> <!-- Facebook pequeño -->
+                  <img
+                    class="social-icon-small hover-glow"
+                    loading="lazy"
+                    src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png"
+                    alt="YouTube"
+                  /> <!-- YouTube pequeño -->
+                  <img
+                    class="social-icon-small hover-glow"
+                    loading="lazy"
+                    src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+                    alt="Twitter"
+                  /> <!-- Twitter pequeño -->
+                  <img
+                    class="social-icon-small hover-glow"
+                    loading="lazy"
+                    src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
+                    alt="LinkedIn"
+                  /> <!-- LinkedIn pequeño -->
+                  <img
+                    class="social-icon-small hover-glow"
+                    loading="lazy"
+                    src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                    alt="Instagram"
+                  /> <!-- Instagram pequeño -->
+                  <img
+                    class="social-icon-small hover-glow"
+                    loading="lazy"
+                    src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+                    alt="Otra red social"
+                  /> <!-- Otro icono pequeño -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- [SOCIAL + ACCORDION RESUELTO] Iconos en fila y en accordion según pantalla -->
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <!-- Aquí cargo el JS de Bootstrap para que funcionen el menú, los colapsables, etc. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> <!-- JS de Bootstrap con componentes interactivos -->
+
+    <!-- Y aquí enlazo un script propio, por ejemplo para animaciones como scrollFade -->
+    <script src="file-DVDjsXkJF7JWyTfTVzJW4V"></script> <!-- Script propio para efectos personalizados -->
+  </body>
+</html>
